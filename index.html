@@ -10,36 +10,44 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   <script>
-    // ==========================================
-    // UPDATE RATE DI SINI (HANYA ANGKA SAJA)
-    // ==========================================
-    const rateAktif = 17100; 
-    // ==========================================
+    /* =========================================================================
+       🚀 🚀 🚀 UPDATE RATE CELINE DI BAWAH INI (HANYA ANGKA) 🚀 🚀 🚀
+       =========================================================================
+    */
+    
+    const rateAktif = 17100; // <--- GANTI ANGKA INI SAJA SAYANGKU! 💵 🔥
+    
+    /* =========================================================================
+       ✅ BERHASIL DIUPDATE! JANGAN UBAH KODE DI BAWAHNYA YA ✅
+       =========================================================================
+    */
   </script>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
-    /* 1. TRANSISI HALAMAN SAAT DIBUKA (ENTRY ANIMATION) */
+    /* 1. TRANSISI MASUK AWAL (ELEGANT ENTRY) */
     @keyframes pageIn {
-      0% { opacity: 0; transform: scale(0.95) translateY(30px); filter: blur(10px); }
-      100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+      0% { opacity: 0; transform: scale(0.9); filter: blur(10px); }
+      100% { opacity: 1; transform: scale(1); filter: blur(0); }
     }
 
-    .page-entry {
-      animation: pageIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    /* 2. EFEK BARU: PREMIUM BREATHING & GLOW */
+    @keyframes breathingGlow {
+      0%, 100% { 
+        transform: scale(1); 
+        box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8), 0 0 20px rgba(168, 85, 247, 0.2);
+      }
+      50% { 
+        transform: scale(1.02); 
+        box-shadow: 0 70px 120px -20px rgba(0, 0, 0, 0.9), 0 0 50px rgba(59, 130, 246, 0.4);
+      }
     }
 
-    /* 2. ANIMASI FLOATING (SETELAH TRANSISI SELESAI) */
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-    }
-
-    /* Gabungkan Entry dan Floating */
+    /* Gabungan Transisi Masuk dan Efek Bernapas */
     .master-container {
-      animation: pageIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards,
-                 float 4s ease-in-out infinite 1.2s; /* Floating jalan setelah entry selesai */
+      animation: pageIn 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+                 breathingGlow 5s ease-in-out infinite 1.5s;
     }
 
     @keyframes gradientShift {
@@ -78,8 +86,7 @@
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(40px);
       -webkit-backdrop-filter: blur(40px);
-      border: 2px solid rgba(255, 255, 255, 0.4); 
-      box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8);
+      border: 2px solid rgba(255, 255, 255, 0.4); /* Border tegas semua sisi */
     }
 
     .embossed-text {
