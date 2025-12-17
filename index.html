@@ -59,7 +59,7 @@
     <div class="absolute top-0 left-0 w-full h-2 animated-gradient"></div>
 
     <div class="text-center mb-6 mt-2">
-      <h1 class="text-3xl font-extrabold text-gray-800 tracking-tight">Toko <span class="text-purple-600">Celine</span></h1>
+      <h1 class="text-3xl font-extrabold text-purple-600 tracking-tight">Toko Celine</h1>
       <p class="text-gray-600 text-sm mt-1 font-medium italic">Solusi Jual Beli Dollar Terpercaya</p>
     </div>
 
@@ -84,13 +84,13 @@
     </div>
 
     <p class="text-[11px] text-gray-500 mt-6 italic text-center font-semibold">
-      *Rate dapat berubah sewaktu-waktu bosku ^^
+      *Rate dapat berubah sewaktu-waktu bosku ^^.
     </p>
   </div>
 
   <script>
     // --- PENGATURAN RATE ---
-    let rateAktif = 17100; // Ubah angka ini jika rate berubah
+    let rateAktif = 17100; 
 
     // --- LOGIKA TANGGAL OTOMATIS ---
     function updateTanggal() {
@@ -99,7 +99,6 @@
       document.getElementById('tanggalRealtime').innerText = hariIni;
     }
 
-    // Jalankan saat halaman dibuka
     updateTanggal();
     document.getElementById('displayRate').innerText = "Rp " + rateAktif.toLocaleString('id-ID');
 
@@ -114,7 +113,6 @@
         minimumFractionDigits: 0
       });
       
-      // Menampilkan Rp 0 jika input kosong
       document.getElementById('idrOutput').innerText = (usd > 0) ? formatter.format(total) : "Rp 0";
     }
   </script>
