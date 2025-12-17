@@ -20,6 +20,29 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
+    /* ANIMASI GRADASI BERJALAN */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .animated-gradient {
+      background: linear-gradient(-45deg, #a855f7, #3b82f6, #ec4899, #8b5cf6);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
+    }
+
+    /* ANIMASI FLOATING */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .floating-card {
+      animation: float 4s ease-in-out infinite;
+    }
+
     body {
       min-height: 100vh;
       display: flex;
@@ -48,12 +71,18 @@
       box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7);
     }
 
+    /* EFEK EMBOSSED TOKO CELINE + GRADASI */
     .embossed-text {
-      font-weight: 800;
-      color: white;
+      font-weight: 900;
+      background: linear-gradient(to right, #ffffff, #a855f7, #3b82f6, #ffffff);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 3s linear infinite;
       text-shadow: 
-        -1px -1px 0px rgba(255,255,255,0.3), 
-         1px  1px 0px rgba(0,0,0,0.8);
+        -1px -1px 0px rgba(255,255,255,0.2), 
+         2px  2px 4px rgba(0,0,0,0.5);
+      letter-spacing: -0.05em;
     }
 
     .btn-action {
@@ -64,12 +93,8 @@
 
     .btn-action:hover {
       background: #f0f0f0;
-      transform: scale(1.05);
-    }
-
-    .total-box {
-      background: linear-gradient(135deg, #7c3aed, #2563eb);
-      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
     }
 
     input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
@@ -83,40 +108,41 @@
     <source src="gambar3.mp4" type="video/mp4">
   </video>
 
-  <div class="max-w-md w-full glass-card rounded-[3.5rem] p-10 relative text-white text-center">
+  <div class="max-w-md w-full glass-card rounded-[3.5rem] p-10 relative text-white text-center floating-card">
+    <div class="absolute top-0 left-0 w-full h-1.5 animated-gradient"></div>
     
-    <div class="mb-10">
-      <h1 class="text-5xl embossed-text tracking-tighter mb-2">Toko Celine</h1>
+    <div class="mb-10 pt-4">
+      <h1 class="text-5xl embossed-text mb-2">Toko Celine</h1>
       <p class="text-green-400 text-[10px] font-black uppercase tracking-[0.4em]">Official Dollar Store</p>
     </div>
 
-    <div class="bg-white/5 rounded-[2rem] py-6 mb-10 border border-white/5">
+    <div class="bg-white/5 rounded-[2rem] py-6 mb-10 border border-white/5 relative overflow-hidden">
       <p class="text-[10px] text-white/40 font-bold uppercase tracking-widest mb-1">Today's Rate</p>
-      <h3 id="displayRate" class="text-3xl font-black text-white">Rp 0</h3>
+      <h3 id="displayRate" class="text-3xl font-black text-white italic">Rp 0</h3>
       <p id="tanggalRealtime" class="text-[11px] text-white/20 mt-1"></p>
     </div>
     
     <div class="mb-10">
       <label class="text-[11px] font-bold text-white/40 uppercase tracking-widest mb-6 block">Ketik dibawah ini untuk Dollar yang mau dibeli</label>
       <div class="relative inline-flex items-center justify-center">
-        <span class="text-4xl font-bold text-green-500 mr-2">$</span>
+        <span class="text-4xl font-bold text-green-500 mr-2 animate-pulse">$</span>
         <input type="number" id="usdInput" placeholder="0" oninput="hitung()"
           class="bg-transparent border-b-2 border-white/10 py-2 text-6xl font-black text-white outline-none focus:border-green-500 transition-all w-48 text-center placeholder:text-white/5">
       </div>
     </div>
 
-    <div class="total-box p-8 rounded-[2.5rem] mb-10">
-      <p class="text-[10px] text-white/60 font-bold uppercase tracking-widest mb-1">Total harus dibayar</p>
-      <h1 id="idrOutput" class="text-4xl font-black text-white tracking-tight">Rp 0</h1>
+    <div class="animated-gradient p-8 rounded-[2.5rem] mb-10 shadow-lg transform transition-transform hover:scale-105">
+      <p class="text-[10px] text-white/70 font-bold uppercase tracking-widest mb-1">Total harus dibayar</p>
+      <h1 id="idrOutput" class="text-4xl font-black text-white tracking-tight drop-shadow-md">Rp 0</h1>
     </div>
 
     <a href="https://t.me/selinnaa" target="_blank" 
        class="btn-action inline-flex items-center gap-3 px-12 py-5 rounded-full font-black text-sm uppercase tracking-wider shadow-xl">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="TG" class="w-5 h-5">
-      Hubungi Admin
+      Hubungi Celine!
     </a>
 
-    <p class="text-[12px] text-white/70 font-bold mt-10 italic drop-shadow-md block">
+    <p class="text-[13px] text-white font-bold mt-10 italic drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] block">
       *Rate sewaktu-waktu dapat berubah, pastikan bosku selalu update ^^
     </p>
 
