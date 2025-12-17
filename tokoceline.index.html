@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Celine - Kalkulator Rate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('gambar1.jpg'); /* ganti sesuai ekstensi file */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body class="p-5">
+
+  <div class="max-w-md w-full glass-effect rounded-2xl shadow-2xl overflow-hidden p-8 border-t-8 border-purple-400">
+    <div class="text-center mb-6">
+      <h1 class="text-3xl font-extrabold text-purple-500 tracking-tight">Selamat Datang di Toko Celine!</h1>
+      <p class="text-gray-500 text-sm mt-1 font-medium italic">Solusi Jual Beli Dollar Terpercaya</p>
+    </div>
+
+    <!-- Rate -->
+    <div class="bg-white rounded-xl p-4 mb-6 border border-gray-100 shadow-sm text-center">
+      <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Rate USD Hari Ini</p>
+      <h3 id="displayRate" class="text-2xl font-black text-purple-500 mt-1 italic">Rp 17.000</h3>
+    </div>
+    
+    <!-- Input USD -->
+    <div class="mb-6">
+      <label class="block text-sm font-bold text-gray-700 mb-2">Jumlah Dollar (USD)</label>
+      <div class="relative">
+        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-purple-500 font-bold text-lg">$</span>
+        <input type="number" id="usdInput" placeholder="0" oninput="hitung()"
+          class="block w-full pl-10 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-100 focus:border-purple-400 outline-none text-2xl font-bold transition-all">
+      </div>
+    </div>
+
+    <!-- Output -->
+    <div class="bg-gradient-to-br from-purple-400 to-purple-500 p-6 rounded-2xl text-center shadow-lg">
+      <p class="text-xs text-purple-100 font-bold uppercase tracking-widest opacity-80">Total Pembayaran (IDR)</p>
+      <h1 id="idrOutput" class="text-4xl font-black text-white mt-2">Rp 0</h1>
+    </div>
+
+    <p class="text-[10px] text-gray-400 mt-6 italic text-center">
+      *Rate bisa kamu ubah langsung di file HTML.
+    </p>
+  </div>
+
+  <script>
+    let rateAktif = 17000; // ubah angka ini sesuai kurs terbaru
+
+    function hitung() {
+      const usd = document.getElementById('usdInput').value;
+      const total = usd * rateAktif;
+      const formatter = new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0
+      });
+      document.getElementById('idrOutput').innerText = formatter.format(total);
+    }
+  </script>
+</body>
+</html>
