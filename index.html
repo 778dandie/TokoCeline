@@ -39,6 +39,15 @@
       animation: gradientAnimation 10s ease infinite;
     }
 
+    /* Animasi Khusus untuk Teks Toko Celine */
+    .animated-text {
+      background: linear-gradient(to right, #a855f7, #3b82f6, #ec4899, #a855f7);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientAnimation 3s linear infinite;
+    }
+
     /* 3. Efek Kaca (Glassmorphism) */
     .glass-effect {
       background: rgba(255, 255, 255, 0.75);
@@ -59,7 +68,7 @@
     <div class="absolute top-0 left-0 w-full h-2 animated-gradient"></div>
 
     <div class="text-center mb-6 mt-2">
-      <h1 class="text-3xl font-extrabold text-purple-600 tracking-tight">Toko Celine</h1>
+      <h1 class="text-4xl font-black animated-text tracking-tighter">Toko Celine</h1>
       <p class="text-gray-600 text-sm mt-1 font-medium italic">Solusi Jual Beli Dollar Terpercaya</p>
     </div>
 
@@ -78,9 +87,18 @@
       </div>
     </div>
 
-    <div class="animated-gradient p-7 rounded-3xl text-center shadow-xl transform transition-all duration-300 hover:scale-105">
+    <div class="animated-gradient p-7 rounded-3xl text-center shadow-xl transform transition-all duration-300 hover:scale-105 mb-6">
       <p class="text-xs text-white font-bold uppercase tracking-widest opacity-90">Total Kamu Terima (IDR)</p>
       <h1 id="idrOutput" class="text-4xl font-black text-white mt-2 drop-shadow-md">Rp 0</h1>
+    </div>
+
+    <div class="border-t border-gray-200 pt-6">
+      <p class="text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-3">Hubungi Admin</p>
+      <a href="https://t.me/selinnaa_" target="_blank" class="flex items-center justify-center gap-3 bg-white/80 border border-purple-200 py-3 rounded-2xl shadow-sm hover:shadow-md transition-all group overflow-hidden relative">
+        <div class="absolute inset-y-0 left-0 w-1 animated-gradient"></div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="w-6 h-6">
+        <span class="text-gray-700 font-bold tracking-tight group-hover:text-purple-600 transition-colors">@selinnaa_</span>
+      </a>
     </div>
 
     <p class="text-[11px] text-gray-500 mt-6 italic text-center font-semibold">
@@ -89,10 +107,8 @@
   </div>
 
   <script>
-    // --- PENGATURAN RATE ---
     let rateAktif = 17100; 
 
-    // --- LOGIKA TANGGAL OTOMATIS ---
     function updateTanggal() {
       const opsi = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
       const hariIni = new Date().toLocaleDateString('id-ID', opsi);
@@ -102,20 +118,16 @@
     updateTanggal();
     document.getElementById('displayRate').innerText = "Rp " + rateAktif.toLocaleString('id-ID');
 
-    // --- LOGIKA KALKULATOR ---
     function hitung() {
       const usd = document.getElementById('usdInput').value;
       const total = usd * rateAktif;
-      
       const formatter = new Intl.NumberFormat('id-ID', {
         style: 'currency',
         currency: 'IDR',
         minimumFractionDigits: 0
       });
-      
       document.getElementById('idrOutput').innerText = (usd > 0) ? formatter.format(total) : "Rp 0";
     }
   </script>
 </body>
 </html>
-
