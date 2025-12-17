@@ -6,7 +6,17 @@
   <title>Toko Celine - Kalkulator Rate</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* 1. Background Video Full Screen */
+    /* 1. Efek Smooth Page Load (Animasi Muncul) */
+    @keyframes fadeInPage {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .page-transition {
+      animation: fadeInPage 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* 2. Background Video Full Screen */
     #video-bg {
       position: fixed;
       right: 0;
@@ -24,9 +34,10 @@
       justify-content: center;
       margin: 0;
       font-family: 'Inter', sans-serif;
+      background-color: #000; /* Fallback warna hitam saat video loading */
     }
 
-    /* 2. Animasi Perubahan Warna (Gradient) */
+    /* 3. Animasi Perubahan Warna (Gradient) */
     @keyframes gradientAnimation {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -39,7 +50,7 @@
       animation: gradientAnimation 10s ease infinite;
     }
 
-    /* Animasi Khusus untuk Teks Toko Celine */
+    /* Animasi Teks Toko Celine */
     .animated-text {
       background: linear-gradient(to right, #a855f7, #3b82f6, #ec4899, #a855f7);
       background-size: 200% auto;
@@ -48,12 +59,16 @@
       animation: gradientAnimation 3s linear infinite;
     }
 
-    /* 3. Efek Kaca (Glassmorphism) */
+    /* 4. Efek Kaca (Glassmorphism) */
     .glass-effect {
       background: rgba(255, 255, 255, 0.75);
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);
       border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .smooth-transition {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
   </style>
 </head>
@@ -61,10 +76,9 @@
 
   <video autoplay muted loop playsinline id="video-bg">
     <source src="gambar3.mp4" type="video/mp4">
-    Browser Anda tidak mendukung video background.
   </video>
 
-  <div class="max-w-md w-full glass-effect rounded-3xl shadow-2xl overflow-hidden p-8 relative">
+  <div class="max-w-md w-full glass-effect rounded-3xl shadow-2xl overflow-hidden p-8 relative page-transition">
     <div class="absolute top-0 left-0 w-full h-2 animated-gradient"></div>
 
     <div class="text-center mb-6 mt-2">
@@ -72,7 +86,7 @@
       <p class="text-gray-600 text-sm mt-1 font-medium italic">Solusi Jual Beli Dollar Terpercaya</p>
     </div>
 
-    <div class="bg-white/80 rounded-2xl p-4 mb-6 border border-purple-100 shadow-sm text-center">
+    <div class="bg-white/80 rounded-2xl p-4 mb-6 border border-purple-100 shadow-sm text-center transform smooth-transition hover:shadow-md">
       <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Rate USD Hari Ini</p>
       <p id="tanggalRealtime" class="text-[11px] text-purple-500 font-bold mb-1"></p>
       <h3 id="displayRate" class="text-3xl font-black text-purple-600 italic">Rp 0</h3>
@@ -80,23 +94,24 @@
     
     <div class="mb-6">
       <label class="block text-sm font-bold text-gray-700 mb-2 text-center uppercase tracking-tighter">Masukkan Jumlah Dollar (USD)</label>
-      <div class="relative">
-        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-purple-600 font-bold text-xl">$</span>
+      <div class="relative group">
+        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-purple-600 font-bold text-xl smooth-transition group-focus-within:scale-125">$</span>
         <input type="number" id="usdInput" placeholder="0" oninput="hitung()"
-          class="block w-full pl-10 pr-4 py-5 border-2 border-purple-100 rounded-2xl focus:ring-4 focus:ring-purple-200 focus:border-purple-500 outline-none text-3xl font-bold transition-all bg-white/50 text-center">
+          class="block w-full pl-10 pr-4 py-5 border-2 border-purple-100 rounded-2xl outline-none text-3xl font-bold bg-white/50 text-center smooth-transition focus:ring-4 focus:ring-purple-200 focus:border-purple-500 focus:bg-white shadow-inner">
       </div>
     </div>
 
-    <div class="animated-gradient p-7 rounded-3xl text-center shadow-xl transform transition-all duration-300 hover:scale-105 mb-6">
+    <div class="animated-gradient p-7 rounded-3xl text-center shadow-xl transform smooth-transition hover:scale-105 active:scale-95 cursor-default mb-6 select-none">
       <p class="text-xs text-white font-bold uppercase tracking-widest opacity-90">Total Kamu Terima (IDR)</p>
       <h1 id="idrOutput" class="text-4xl font-black text-white mt-2 drop-shadow-md">Rp 0</h1>
     </div>
 
     <div class="border-t border-gray-200 pt-6">
       <p class="text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-3">Hubungi Admin</p>
-      <a href="https://t.me/selinnaa" target="_blank" class="flex items-center justify-center gap-3 bg-white/80 border border-purple-200 py-3 rounded-2xl shadow-sm hover:shadow-md transition-all group overflow-hidden relative">
-        <div class="absolute inset-y-0 left-0 w-1 animated-gradient"></div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="w-6 h-6">
+      <a href="https://t.me/selinnaa_" target="_blank" 
+         class="flex items-center justify-center gap-3 bg-white/80 border border-purple-200 py-4 rounded-2xl shadow-sm smooth-transition hover:shadow-lg hover:border-purple-400 hover:-translate-y-1 active:scale-95 group overflow-hidden relative">
+        <div class="absolute inset-y-0 left-0 w-1 animated-gradient smooth-transition group-hover:w-2"></div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="w-6 h-6 smooth-transition group-hover:rotate-12">
         <span class="text-gray-700 font-bold tracking-tight group-hover:text-purple-600 transition-colors">@selinnaa</span>
       </a>
     </div>
@@ -131,5 +146,3 @@
   </script>
 </body>
 </html>
-
-
