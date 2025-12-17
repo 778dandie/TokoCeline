@@ -13,7 +13,7 @@
     // ==========================================
     // UPDATE RATE DI SINI (HANYA ANGKA SAJA)
     // ==========================================
-    const rateAktif = 17250; 
+    const rateAktif = 17100; 
     // ==========================================
   </script>
 
@@ -61,12 +61,11 @@
       filter: brightness(0.4);
     }
 
-    /* GLASS CARD DENGAN BORDER TEGAS DI SEMUA SISI */
     .glass-card {
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(40px);
       -webkit-backdrop-filter: blur(40px);
-      border: 2px solid rgba(255, 255, 255, 0.4); /* Border lebih tebal & terang */
+      border: 2px solid rgba(255, 255, 255, 0.4); 
       box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8);
     }
 
@@ -110,13 +109,13 @@
     
     <div class="mb-10">
       <h1 class="text-5xl embossed-text mb-2">Toko Celine</h1>
-      <p class="text-green-400 text-[10px] font-black uppercase tracking-[0.4em]">Trusted Digital Exchange</p>
+      <p class="text-green-400 text-[10px] font-black uppercase tracking-[0.4em]">Official Dollar Store</p>
     </div>
 
-    <div class="bg-white/10 rounded-[2rem] py-6 mb-10 border border-white/20">
-      <p class="text-[11px] text-green-400 font-black uppercase tracking-[0.2em] mb-1">Live Rate</p>
-      <h3 id="displayRate" class="text-4xl font-black text-white italic tracking-tight">Rp 0</h3>
-      <p id="tanggalRealtime" class="text-[12px] text-white font-semibold mt-2 opacity-90"></p>
+    <div class="bg-white/10 rounded-[2rem] py-8 mb-10 border border-white/20">
+      <p class="text-[14px] text-green-400 font-black uppercase tracking-[0.3em] mb-2">Live Rate</p>
+      <h3 id="displayRate" class="text-5xl font-black text-white italic tracking-tighter">Rp 0</h3>
+      <p id="tanggalRealtime" class="text-[14px] text-white font-bold mt-3 opacity-100 drop-shadow-sm"></p>
     </div>
     
     <div class="mb-10">
@@ -165,4 +164,3 @@
   </script>
 </body>
 </html>
-
