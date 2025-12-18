@@ -11,43 +11,47 @@
   
   <script>
     /* =========================================================================
-       🚀 🚀 🚀 UPDATE RATE CELINE DI BAWAH INI (HANYA ANGKA) 🚀 🚀 🚀
-       =========================================================================
+        🚀 🚀 🚀 UPDATE RATE CELINE DI BAWAH INI (HANYA ANGKA) 🚀 🚀 🚀
+        =========================================================================
     */
     
     const rateAktif = 17100; // <--- GANTI ANGKA INI SAJA SAYANGKU! 💵 🔥
     
     /* =========================================================================
-       ✅ BERHASIL DIUPDATE! JANGAN UBAH KODE DI BAWAHNYA YA ✅
-       =========================================================================
+        ✅ BERHASIL DIUPDATE! JANGAN UBAH KODE DI BAWAHNYA YA ✅
+        =========================================================================
     */
   </script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    /* Import Lexend untuk angka & Jakarta Sans untuk teks */
+    @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
-    /* 1. TRANSISI MASUK AWAL (ELEGANT ENTRY) */
+    /* CSS Class khusus untuk nominal agar pakai Lexend */
+    .font-lexend {
+      font-family: 'Lexend', sans-serif !important;
+    }
+
     @keyframes pageIn {
       0% { opacity: 0; transform: scale(0.9); filter: blur(10px); }
       100% { opacity: 1; transform: scale(1); filter: blur(0); }
     }
 
-    /* 2. EFEK BARU: PREMIUM BREATHING & GLOW */
-    @keyframes breathingGlow {
+    /* EFEK FLOATING + BREATHING COMBO */
+    @keyframes floatingCombo {
       0%, 100% { 
-        transform: scale(1); 
+        transform: translateY(0) scale(1); 
         box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8), 0 0 20px rgba(168, 85, 247, 0.2);
       }
       50% { 
-        transform: scale(1.02); 
-        box-shadow: 0 70px 120px -20px rgba(0, 0, 0, 0.9), 0 0 50px rgba(59, 130, 246, 0.4);
+        transform: translateY(-25px) scale(1.03); 
+        box-shadow: 0 90px 140px -30px rgba(0, 0, 0, 0.9), 0 0 60px rgba(59, 130, 246, 0.4);
       }
     }
 
-    /* Gabungan Transisi Masuk dan Efek Bernapas */
     .master-container {
       animation: pageIn 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards,
-                 breathingGlow 5s ease-in-out infinite 1.5s;
+                 floatingCombo 4s ease-in-out infinite 1.5s;
     }
 
     @keyframes gradientShift {
@@ -86,7 +90,7 @@
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(40px);
       -webkit-backdrop-filter: blur(40px);
-      border: 2px solid rgba(255, 255, 255, 0.4); /* Border tegas semua sisi */
+      border: 2px solid rgba(255, 255, 255, 0.4);
     }
 
     .embossed-text {
@@ -134,22 +138,22 @@
 
     <div class="bg-white/10 rounded-[2rem] py-8 mb-10 border border-white/20">
       <p class="text-[14px] text-green-400 font-black uppercase tracking-[0.3em] mb-2">Live Rate</p>
-      <h3 id="displayRate" class="text-5xl font-black text-white italic tracking-tighter">Rp 0</h3>
+      <h3 id="displayRate" class="text-5xl font-lexend font-black text-white italic tracking-tighter">Rp 0</h3>
       <p id="tanggalRealtime" class="text-[14px] text-white font-bold mt-3 opacity-100 drop-shadow-sm"></p>
     </div>
     
     <div class="mb-10">
       <label class="text-[11px] font-bold text-white/60 uppercase tracking-widest mb-6 block">Ketik dibawah ini untuk Dollar yang mau dibeli</label>
       <div class="relative inline-flex items-center justify-center">
-        <span class="text-4xl font-bold text-green-500 mr-2 animate-pulse">$</span>
+        <span class="text-4xl font-bold text-green-500 mr-2 animate-pulse font-lexend">$</span>
         <input type="number" id="usdInput" placeholder="0" oninput="hitung()"
-          class="bg-transparent border-b-2 border-white/30 py-2 text-6xl font-black text-white outline-none focus:border-green-400 transition-all w-48 text-center placeholder:text-white/10">
+          class="bg-transparent border-b-2 border-white/30 py-2 text-6xl font-lexend font-black text-white outline-none focus:border-green-400 transition-all w-48 text-center placeholder:text-white/10">
       </div>
     </div>
 
     <div class="animated-gradient p-8 rounded-[2.5rem] mb-10 shadow-2xl border border-white/20">
       <p class="text-[10px] text-white/80 font-bold uppercase tracking-widest mb-1">Total harus dibayar</p>
-      <h1 id="idrOutput" class="text-4xl font-black text-white tracking-tight drop-shadow-lg">Rp 0</h1>
+      <h1 id="idrOutput" class="text-4xl font-lexend font-black text-white tracking-tight drop-shadow-lg">Rp 0</h1>
     </div>
 
     <a href="https://t.me/selinnaa" target="_blank" 
