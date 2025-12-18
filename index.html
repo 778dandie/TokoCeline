@@ -11,21 +11,23 @@
   
   <script>
     /* =========================================================================
-       🚀 🚀 🚀 UPDATE RATE CELINE DI BAWAH INI (HANYA ANGKA) 🚀 🚀 🚀
-       =========================================================================
+        🚀 🚀 🚀 UPDATE RATE CELINE DI BAWAH INI (HANYA ANGKA) 🚀 🚀 🚀
+        =========================================================================
     */
     
-    const rateAktif = 17100; // <--- GANTI ANGKA INI SAJA BOSKU! 💵 🔥
+    const rateAktif = 17100; // <--- GANTI ANGKA INI SAJA SAYANGKU! 💵 🔥
     
     /* =========================================================================
-       ✅ BERHASIL DIUPDATE! JANGAN UBAH KODE DI BAWAHNYA YA ✅
-       =========================================================================
+        ✅ BERHASIL DIUPDATE! JANGAN UBAH KODE DI BAWAHNYA YA ✅
+        =========================================================================
     */
   </script>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
+    /* Font pendukung tetap pakai Jakarta Sans */
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
     .font-tegas { font-family: 'Montserrat', sans-serif !important; }
 
     @keyframes pageIn {
@@ -62,7 +64,6 @@
       justify-content: center;
       margin: 0;
       padding: 1rem;
-      font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #000;
       overflow: hidden;
     }
@@ -83,9 +84,10 @@
       border: 2px solid rgba(255, 255, 255, 0.3);
     }
 
-    /* EFEK EMBOSSED DIKEMBALIKAN */
+    /* KEMBALI KE DEFAULT SANS-SERIF TAPI TETAP EMBOSSED */
     .embossed-text {
       font-weight: 900;
+      font-family: sans-serif; /* Font bawaan browser yang tajam */
       background: linear-gradient(to right, #ffffff, #a855f7, #3b82f6, #ffffff);
       background-size: 200% auto;
       -webkit-background-clip: text;
@@ -94,7 +96,7 @@
       text-shadow: 
         -1px -1px 0px rgba(255,255,255,0.2), 
          2px  2px 4px rgba(0,0,0,0.6);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.05em;
     }
 
     input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
@@ -111,7 +113,7 @@
   <div class="w-full max-w-sm glass-card rounded-[2.5rem] p-6 md:p-10 relative text-white text-center master-container">
     
     <div class="mb-6">
-      <h1 class="text-4xl md:text-5xl embossed-text mb-2 italic font-tegas">Toko Celine</h1>
+      <h1 class="text-4xl md:text-5xl embossed-text mb-2 italic">Toko Celine</h1>
       <p class="text-green-400 text-[9px] font-black uppercase tracking-[0.4em]">Official Dollar Store</p>
     </div>
 
@@ -132,16 +134,16 @@
 
     <div class="animated-gradient p-6 rounded-[2rem] mb-8 shadow-xl border border-white/20">
       <p class="text-[9px] text-white/80 font-bold uppercase tracking-widest mb-1">Total Bayar</p>
-      <h1 id="idrOutput" class="text-2xl md:text-3xl font-tegas font-black text-white tracking-tight drop-shadow-md">Rp 0</h1>
+      <h1 id="idrOutput" class="text-2xl md:text-3xl font-tegas font-black text-white tracking-tight">Rp 0</h1>
     </div>
 
     <a href="https://t.me/selinnaa" target="_blank" 
-       class="bg-white text-black inline-flex items-center gap-2 px-10 py-4 rounded-full font-black text-xs uppercase tracking-wider shadow-lg active:scale-95 transition-all hover:bg-gray-100">
+       class="bg-white text-black inline-flex items-center gap-2 px-10 py-4 rounded-full font-black text-xs uppercase tracking-wider shadow-lg active:scale-95 transition-all">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="TG" class="w-4 h-4">
       Hubungi Celine!
     </a>
 
-    <p class="text-[11px] text-white/80 font-bold mt-8 italic px-2 drop-shadow-sm">
+    <p class="text-[11px] text-white/80 font-bold mt-8 italic px-2">
       *Rate sewaktu-waktu dapat berubah ya bosku!
     </p>
 
