@@ -2,79 +2,63 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>✨ Trusted Digital Exchange ✨</title>
   
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%2322c55e%22/><text y=%22.75em%22 x=%2250%%22 text-anchor=%22middle%22 font-size=%2270%22 fill=%22white%22 font-family=%22Arial%22 font-weight=%22bold%22>$</text></svg>">
-
   <script src="https://cdn.tailwindcss.com"></script>
   
   <script>
-    /* =========================================================================
-        🚀 🚀 🚀 UPDATE RATE CELINE DI BAWAH INI (HANYA ANGKA) 🚀 🚀 🚀
-        =========================================================================
+    /* ===========================================================
+       🚀 AREA UPDATE RATE CELINE (SANGAT MUDAH DICARI) 🚀
+       ===========================================================
+       Ganti angka di bawah ini saja untuk mengubah harga:
     */
-    
-    const rateAktif = 17100; // <--- GANTI ANGKA INI SAJA SAYANGKU! 💵 🔥
-    
-    /* =========================================================================
-        ✅ BERHASIL DIUPDATE! JANGAN UBAH KODE DI BAWAHNYA YA ✅
-        =========================================================================
+
+    const rateAktif = 17100; // <--- EDIT ANGKA INI SAJA! 🔥
+
+    /* ===========================================================
+       SELESAI! JANGAN UBAH APAPUN DI BAWAH INI YA SAYANGKU ✅
+       ===========================================================
     */
   </script>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
-
-    .font-tegas {
-      font-family: 'Montserrat', sans-serif !important;
-    }
-
+    .font-tegas { font-family: 'Montserrat', sans-serif !important; }
+    
     @keyframes pageIn {
-      0% { opacity: 0; transform: scale(0.9); filter: blur(10px); }
+      0% { opacity: 0; transform: scale(0.95); filter: blur(10px); }
       100% { opacity: 1; transform: scale(1); filter: blur(0); }
     }
-
-    /* EFEK FLOATING + BREATHING COMBO */
     @keyframes floatingCombo {
-      0%, 100% { 
-        transform: translateY(0) scale(1); 
-        box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8), 0 0 20px rgba(168, 85, 247, 0.2);
-      }
-      50% { 
-        transform: translateY(-25px) scale(1.03); 
-        box-shadow: 0 90px 140px -30px rgba(0, 0, 0, 0.9), 0 0 60px rgba(59, 130, 246, 0.4);
-      }
+      0%, 100% { transform: translateY(0); box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5); }
+      50% { transform: translateY(-10px); box-shadow: 0 50px 80px -20px rgba(0, 0, 0, 0.7); }
     }
-
     .master-container {
-      animation: pageIn 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards,
-                 floatingCombo 4s ease-in-out infinite 1.5s;
+      animation: pageIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+                 floatingCombo 4s ease-in-out infinite 1.2s;
     }
-
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
     .animated-gradient {
       background: linear-gradient(-45deg, #a855f7, #3b82f6, #ec4899, #8b5cf6);
       background-size: 400% 400%;
       animation: gradientShift 8s ease infinite;
     }
-
     body {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0;
+      padding: 1rem;
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #000;
-      overflow: hidden;
+      overflow-x: hidden;
     }
-
     #video-bg {
       position: fixed;
       right: 0; bottom: 0;
@@ -83,14 +67,12 @@
       object-fit: cover;
       filter: brightness(0.4);
     }
-
     .glass-card {
       background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(40px);
-      -webkit-backdrop-filter: blur(40px);
-      border: 2px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
-
     .embossed-text {
       font-weight: 900;
       background: linear-gradient(to right, #ffffff, #a855f7, #3b82f6, #ffffff);
@@ -98,70 +80,53 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: gradientShift 3s linear infinite;
-      text-shadow: 
-        -1px -1px 0px rgba(255,255,255,0.2), 
-         2px  2px 4px rgba(0,0,0,0.6);
-      letter-spacing: -0.05em;
     }
-
-    .btn-action {
-      background: #ffffff;
-      color: #000000;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .btn-action:hover {
-      background: #f0f0f0;
-      transform: scale(1.08);
-      box-shadow: 0 0 25px rgba(255,255,255,0.5);
-    }
-
     input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
       -webkit-appearance: none; margin: 0;
     }
   </style>
 </head>
-<body class="p-6">
+<body>
 
   <video autoplay muted loop playsinline id="video-bg">
     <source src="gambar3.mp4" type="video/mp4">
   </video>
 
-  <div class="max-w-md w-full glass-card rounded-[3.5rem] p-10 relative text-white text-center master-container">
+  <div class="w-full max-w-sm glass-card rounded-[2.5rem] p-6 md:p-10 relative text-white text-center master-container">
     
-    <div class="mb-10">
-      <h1 class="text-5xl embossed-text mb-2">Toko Celine</h1>
-      <p class="text-green-400 text-[10px] font-black uppercase tracking-[0.4em]">Official Dollar Store</p>
+    <div class="mb-6">
+      <h1 class="text-3xl md:text-5xl embossed-text mb-1 italic">Toko Celine</h1>
+      <p class="text-green-400 text-[9px] font-black uppercase tracking-[0.3em]">Official Dollar Store</p>
     </div>
 
-    <div class="bg-white/10 rounded-[2rem] py-8 mb-10 border border-white/20">
-      <p class="text-[16px] text-green-400 font-black uppercase tracking-[0.2em] mb-2">Live Rate</p>
-      <h3 id="displayRate" class="text-5xl font-tegas font-black text-white italic tracking-tighter">Rp 0</h3>
-      <p id="tanggalRealtime" class="text-[16px] text-white font-bold mt-3 opacity-100 drop-shadow-md"></p>
+    <div class="bg-white/10 rounded-[1.5rem] py-5 mb-6 border border-white/10">
+      <p class="text-[12px] text-green-400 font-black uppercase tracking-[0.2em] mb-1">Live Rate</p>
+      <h3 id="displayRate" class="text-3xl md:text-4xl font-tegas font-black text-white italic tracking-tighter">Rp 0</h3>
+      <p id="tanggalRealtime" class="text-[11px] text-white/80 font-bold mt-2"></p>
     </div>
     
-    <div class="mb-10">
-      <label class="text-[11px] font-bold text-white/60 uppercase tracking-widest mb-6 block">Ketik dibawah ini untuk Dollar yang mau dibeli</label>
-      <div class="relative inline-flex items-center justify-center">
-        <span class="text-4xl font-bold text-green-500 mr-2 animate-pulse font-tegas">$</span>
+    <div class="mb-6">
+      <label class="text-[10px] font-bold text-white/60 uppercase tracking-widest mb-4 block">Berapa Dollar yang ingin dibeli?</label>
+      <div class="flex items-center justify-center gap-2">
+        <span class="text-3xl font-bold text-green-500 animate-pulse font-tegas">$</span>
         <input type="number" id="usdInput" placeholder="0" oninput="hitung()"
-          class="bg-transparent border-b-2 border-white/30 py-2 text-6xl font-tegas font-black text-white outline-none focus:border-green-400 transition-all w-48 text-center placeholder:text-white/10">
+          class="bg-transparent border-b-2 border-white/20 py-1 text-4xl md:text-5xl font-tegas font-black text-white outline-none focus:border-green-400 transition-all w-32 text-center placeholder:text-white/10">
       </div>
     </div>
 
-    <div class="animated-gradient p-8 rounded-[2.5rem] mb-10 shadow-2xl border border-white/20">
-      <p class="text-[10px] text-white/80 font-bold uppercase tracking-widest mb-1">Total harus dibayar</p>
-      <h1 id="idrOutput" class="text-4xl font-tegas font-black text-white tracking-tight drop-shadow-lg">Rp 0</h1>
+    <div class="animated-gradient p-6 rounded-[2rem] mb-8 shadow-xl border border-white/20">
+      <p class="text-[9px] text-white/80 font-bold uppercase tracking-widest mb-1">Total Pembayaran</p>
+      <h1 id="idrOutput" class="text-2xl md:text-3xl font-tegas font-black text-white tracking-tight">Rp 0</h1>
     </div>
 
     <a href="https://t.me/selinnaa" target="_blank" 
-       class="btn-action inline-flex items-center gap-3 px-12 py-5 rounded-full font-black text-sm uppercase tracking-wider shadow-xl">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="TG" class="w-5 h-5">
+       class="bg-white text-black inline-flex items-center gap-2 px-8 py-4 rounded-full font-black text-xs uppercase tracking-wider shadow-lg active:scale-95 transition-transform">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="TG" class="w-4 h-4">
       Hubungi Celine!
     </a>
 
-    <p class="text-[13px] text-white font-black mt-10 italic drop-shadow-[0_2px_4px_rgba(0,0,0,1)] block">
-      *Rate sewaktu-waktu dapat berubah, pastikan bosku selalu update ^^
+    <p class="text-[11px] text-white/70 font-bold mt-8 italic px-2">
+      *Rate dapat berubah sewaktu-waktu, pastikan bosku selalu update^^
     </p>
 
   </div>
