@@ -24,12 +24,10 @@
   </script>
 
   <style>
-    /* Import Lexend untuk angka & Jakarta Sans untuk teks */
-    @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
-    /* CSS Class khusus untuk nominal agar pakai Lexend */
-    .font-lexend {
-      font-family: 'Lexend', sans-serif !important;
+    .font-tegas {
+      font-family: 'Montserrat', sans-serif !important;
     }
 
     @keyframes pageIn {
@@ -137,23 +135,23 @@
     </div>
 
     <div class="bg-white/10 rounded-[2rem] py-8 mb-10 border border-white/20">
-      <p class="text-[14px] text-green-400 font-black uppercase tracking-[0.3em] mb-2">Live Rate</p>
-      <h3 id="displayRate" class="text-5xl font-lexend font-black text-white italic tracking-tighter">Rp 0</h3>
-      <p id="tanggalRealtime" class="text-[14px] text-white font-bold mt-3 opacity-100 drop-shadow-sm"></p>
+      <p class="text-[16px] text-green-400 font-black uppercase tracking-[0.2em] mb-2">Live Rate</p>
+      <h3 id="displayRate" class="text-5xl font-tegas font-black text-white italic tracking-tighter">Rp 0</h3>
+      <p id="tanggalRealtime" class="text-[16px] text-white font-bold mt-3 opacity-100 drop-shadow-md"></p>
     </div>
     
     <div class="mb-10">
       <label class="text-[11px] font-bold text-white/60 uppercase tracking-widest mb-6 block">Ketik dibawah ini untuk Dollar yang mau dibeli</label>
       <div class="relative inline-flex items-center justify-center">
-        <span class="text-4xl font-bold text-green-500 mr-2 animate-pulse font-lexend">$</span>
+        <span class="text-4xl font-bold text-green-500 mr-2 animate-pulse font-tegas">$</span>
         <input type="number" id="usdInput" placeholder="0" oninput="hitung()"
-          class="bg-transparent border-b-2 border-white/30 py-2 text-6xl font-lexend font-black text-white outline-none focus:border-green-400 transition-all w-48 text-center placeholder:text-white/10">
+          class="bg-transparent border-b-2 border-white/30 py-2 text-6xl font-tegas font-black text-white outline-none focus:border-green-400 transition-all w-48 text-center placeholder:text-white/10">
       </div>
     </div>
 
     <div class="animated-gradient p-8 rounded-[2.5rem] mb-10 shadow-2xl border border-white/20">
       <p class="text-[10px] text-white/80 font-bold uppercase tracking-widest mb-1">Total harus dibayar</p>
-      <h1 id="idrOutput" class="text-4xl font-lexend font-black text-white tracking-tight drop-shadow-lg">Rp 0</h1>
+      <h1 id="idrOutput" class="text-4xl font-tegas font-black text-white tracking-tight drop-shadow-lg">Rp 0</h1>
     </div>
 
     <a href="https://t.me/selinnaa" target="_blank" 
