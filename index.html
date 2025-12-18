@@ -83,17 +83,20 @@
       border: 2px solid rgba(255, 255, 255, 0.3);
     }
 
-    /* GAYA TOKO CELINE: TEGAK, TEBAL, EMBOSSED */
-    .toko-celine-style {
-      font-family: 'Montserrat', sans-serif;
+    /* KEMBALI KE STYLE AWAL: EMBOSSED & BERWARNA-WARNI JALAN */
+    .embossed-text {
       font-weight: 900;
-      font-style: normal; /* Memastikan tidak miring */
-      background: linear-gradient(to bottom, #ffffff 30%, #a855f7 60%, #3b82f6 100%);
+      font-family: sans-serif; /* Menggunakan font default tajam seperti awal */
+      background: linear-gradient(to right, #ffffff, #a855f7, #3b82f6, #ec4899, #ffffff);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.8));
-      letter-spacing: -0.02em;
-      line-height: 1;
+      animation: gradientShift 3s linear infinite;
+      text-shadow: 
+        -1px -1px 0px rgba(255,255,255,0.2), 
+         2px  2px 4px rgba(0,0,0,0.6);
+      letter-spacing: -0.05em;
+      font-style: normal; /* Pastikan TIDAK miring */
     }
 
     input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
@@ -110,8 +113,8 @@
   <div class="w-full max-w-sm glass-card rounded-[2.5rem] p-6 md:p-10 relative text-white text-center master-container">
     
     <div class="mb-6">
-      <h1 class="text-4xl md:text-5xl toko-celine-style mb-2 uppercase">Toko Celine</h1>
-      <p class="text-green-400 text-[9px] font-black uppercase tracking-[0.4em]">Official Dollar Store</p>
+      <h1 class="text-4xl md:text-5xl embossed-text mb-2 uppercase">Toko Celine</h1>
+      <p class="text-green-400 text-[10px] font-black uppercase tracking-[0.4em]">Official Dollar Store</p>
     </div>
 
     <div class="bg-white/10 rounded-[1.5rem] py-5 mb-6 border border-white/20 shadow-inner">
