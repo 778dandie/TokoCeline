@@ -10,17 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   <script>
-    /* =========================================================================
-        🚀 🚀 🚀 UPDATE RATE CELINE DI BAWAH INI (HANYA ANGKA) 🚀 🚀 🚀
-        =========================================================================
-    */
-    
-    const rateAktif = 17100; // <--- GANTI ANGKA INI SAJA SAYANGKU! 💵 🔥
-    
-    /* =========================================================================
-        ✅ BERHASIL DIUPDATE! JANGAN UBAH KODE DI BAWAHNYA YA ✅
-        =========================================================================
-    */
+    const rateAktif = 17100; 
   </script>
 
   <style>
@@ -35,15 +25,14 @@
       100% { opacity: 1; transform: scale(1); filter: blur(0); }
     }
 
-    /* EFEK FLOATING + BREATHING COMBO ASLI */
     @keyframes floatingCombo {
       0%, 100% { 
         transform: translateY(0) scale(1); 
-        box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8), 0 0 20px rgba(168, 85, 247, 0.2);
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 0 15px rgba(168, 85, 247, 0.2);
       }
       50% { 
         transform: translateY(-15px) scale(1.02); 
-        box-shadow: 0 70px 120px -30px rgba(0, 0, 0, 0.9), 0 0 40px rgba(59, 130, 246, 0.3);
+        box-shadow: 0 50px 80px -20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(59, 130, 246, 0.4);
       }
     }
 
@@ -72,7 +61,7 @@
       margin: 0;
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #000;
-      overflow-x: hidden; /* Mencegah geser kanan-kiri */
+      overflow-x: hidden; /* Mencegah scroll horizontal */
     }
 
     #video-bg {
@@ -98,9 +87,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: gradientShift 3s linear infinite;
-      text-shadow: 
-        -1px -1px 0px rgba(255,255,255,0.2), 
-         2px  2px 4px rgba(0,0,0,0.6);
+      text-shadow: -1px -1px 0px rgba(255,255,255,0.2), 2px 2px 4px rgba(0,0,0,0.6);
       letter-spacing: -0.05em;
     }
 
@@ -112,8 +99,7 @@
 
     .btn-action:hover {
       background: #f0f0f0;
-      transform: scale(1.08);
-      box-shadow: 0 0 25px rgba(255,255,255,0.5);
+      transform: scale(1.05);
     }
 
     input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
@@ -121,47 +107,47 @@
     }
   </style>
 </head>
-<body class="p-4 md:p-6">
+<body class="p-4 sm:p-6">
 
   <video autoplay muted loop playsinline id="video-bg">
     <source src="gambar3.mp4" type="video/mp4">
   </video>
 
-  <div class="max-w-sm md:max-w-md w-full glass-card rounded-[2.5rem] md:rounded-[3.5rem] p-8 md:p-10 relative text-white text-center master-container">
+  <div class="w-full max-w-[360px] sm:max-w-md glass-card rounded-[2.5rem] sm:rounded-[3.5rem] p-6 sm:p-10 relative text-white text-center master-container">
     
-    <div class="mb-6 md:mb-10">
-      <h1 class="text-4xl md:text-5xl embossed-text mb-2">Toko Celine</h1>
-      <p class="text-green-400 text-[10px] font-black uppercase tracking-[0.4em]">Official Dollar Store</p>
+    <div class="mb-6 sm:mb-10">
+      <h1 class="text-4xl sm:text-5xl embossed-text mb-1">Toko Celine</h1>
+      <p class="text-green-400 text-[9px] sm:text-[10px] font-black uppercase tracking-[0.3em]">Official Dollar Store</p>
     </div>
 
-    <div class="bg-white/10 rounded-[1.5rem] md:rounded-[2rem] py-6 md:py-8 mb-6 md:mb-10 border border-white/20">
-      <p class="text-[14px] md:text-[16px] text-green-400 font-black uppercase tracking-[0.2em] mb-2">Live Rate</p>
-      <h3 id="displayRate" class="text-3xl md:text-5xl font-tegas font-black text-white italic tracking-tighter">Rp 0</h3>
-      <p id="tanggalRealtime" class="text-[14px] md:text-[16px] text-white font-bold mt-3 opacity-100 drop-shadow-md"></p>
+    <div class="bg-white/10 rounded-[1.5rem] sm:rounded-[2rem] py-5 sm:py-8 mb-6 sm:mb-10 border border-white/20">
+      <p class="text-[12px] sm:text-[16px] text-green-400 font-black uppercase tracking-[0.2em] mb-1">Live Rate</p>
+      <h3 id="displayRate" class="text-3xl sm:text-5xl font-tegas font-black text-white italic tracking-tighter">Rp 0</h3>
+      <p id="tanggalRealtime" class="text-[12px] sm:text-[14px] text-white font-bold mt-2 opacity-80"></p>
     </div>
     
-    <div class="mb-6 md:mb-10">
-      <label class="text-[10px] md:text-[11px] font-bold text-white/60 uppercase tracking-widest mb-4 md:mb-6 block">Input Dollar dibawah ini:</label>
+    <div class="mb-6 sm:mb-10">
+      <label class="text-[10px] font-bold text-white/60 uppercase tracking-widest mb-4 block leading-tight">Input Dollar dibawah ini:</label>
       <div class="relative inline-flex items-center justify-center">
-        <span class="text-3xl md:text-4xl font-bold text-green-500 mr-2 animate-pulse font-tegas">$</span>
+        <span class="text-3xl sm:text-4xl font-bold text-green-500 mr-2 animate-pulse font-tegas">$</span>
         <input type="number" id="usdInput" placeholder="0" oninput="hitung()"
-          class="bg-transparent border-b-2 border-white/30 py-1 md:py-2 text-4xl md:text-6xl font-tegas font-black text-white outline-none focus:border-green-400 transition-all w-32 md:w-48 text-center placeholder:text-white/10">
+          class="bg-transparent border-b-2 border-white/30 py-1 text-4xl sm:text-6xl font-tegas font-black text-white outline-none focus:border-green-400 transition-all w-32 sm:w-48 text-center placeholder:text-white/10">
       </div>
     </div>
 
-    <div class="animated-gradient p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] mb-8 md:mb-10 shadow-2xl border border-white/20">
-      <p class="text-[9px] md:text-[10px] text-white/80 font-bold uppercase tracking-widest mb-1">Total yang harus dibayar</p>
-      <h1 id="idrOutput" class="text-2xl md:text-4xl font-tegas font-black text-white tracking-tight drop-shadow-lg">Rp 0</h1>
+    <div class="animated-gradient p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2.5rem] mb-6 sm:mb-10 shadow-2xl border border-white/20">
+      <p class="text-[9px] sm:text-[10px] text-white/80 font-bold uppercase tracking-widest mb-1">Total yang harus dibayar</p>
+      <h1 id="idrOutput" class="text-2xl sm:text-4xl font-tegas font-black text-white tracking-tight drop-shadow-lg leading-tight">Rp 0</h1>
     </div>
 
     <a href="https://t.me/selinnaa" target="_blank" 
-       class="btn-action inline-flex items-center gap-3 px-10 py-4 md:px-12 md:py-5 rounded-full font-black text-xs md:text-sm uppercase tracking-wider shadow-xl">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="TG" class="w-5 h-5">
+       class="btn-action inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-12 py-4 sm:py-5 rounded-full font-black text-[12px] sm:text-sm uppercase tracking-wider shadow-xl">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="TG" class="w-4 h-4 sm:w-5 sm:w-5">
       Hubungi Celine!
     </a>
 
-    <p class="text-[11px] md:text-[13px] text-white font-black mt-8 md:mt-10 italic drop-shadow-[0_2px_4px_rgba(0,0,0,1)] block">
-      *Rate sewaktu-waktu dapat berubah, pastikan bosku selalu update ^^
+    <p class="text-[11px] sm:text-[13px] text-white font-bold mt-6 sm:mt-10 italic drop-shadow-md block leading-snug">
+      *Rate sewaktu-waktu dapat berubah, pastikan selalu update ^^
     </p>
 
   </div>
